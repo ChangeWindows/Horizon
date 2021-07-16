@@ -13,7 +13,7 @@ import clsx from 'clsx';
 export default function Index({ app, platforms, channel_platforms }) {
     return (
         <App>
-            <InertiaHead title={`Channels &middot; ${app.name}`} />
+            <InertiaHead title="Channels" />
 
             <PlatformNavigation home all="/channels" page="Channels" platforms={platforms} />
         

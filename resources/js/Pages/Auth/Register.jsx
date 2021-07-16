@@ -16,7 +16,7 @@ export default function Register({ app, status }) {
 
     return (
         <Auth>
-            <InertiaHead title={`Register &middot; ${app.name}`} />
+            <InertiaHead title="Register" />
 
             <form onSubmit={handleSubmit} className="row g-3">
                 {Object.keys(status).length > 0 &&

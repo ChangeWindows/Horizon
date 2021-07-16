@@ -67,7 +67,7 @@ Route::prefix('')->name('front')->group(function() {
 
     Route::prefix('settings')->name('.settings')->group(function() {
         Route::get('', [SettingsController::class, 'index'])->name('');
-        Route::get('/about', [SettingsController::class, 'about'])->name('.about');
+        Route::get('/about', [SettingsController::class, 'index']);
     });
 });
 

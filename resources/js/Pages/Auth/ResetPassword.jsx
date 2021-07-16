@@ -16,7 +16,7 @@ export default function ResetPassword({ app, token, status }) {
 
     return (
         <Auth>
-            <InertiaHead title={`Reset Password &middot; ${app.name}`} />
+            <InertiaHead title="Reset Password" />
             
             <form onSubmit={handleSubmit} className="row g-3">
                 <input type="hidden" name="token" value={token} />

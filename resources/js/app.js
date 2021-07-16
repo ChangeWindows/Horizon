@@ -1,7 +1,3 @@
-require('./bootstrap');
-
-require('alpinejs');
-
 import React from 'react';
 import { render } from 'react-dom';
 import { InertiaProgress } from '@inertiajs/progress';
@@ -15,6 +11,7 @@ InertiaProgress.init({
 import { createInertiaApp } from '@inertiajs/inertia-react'
 
 createInertiaApp({
+    title: title => `${title} - ChangeWindows`,
     resolve: name => require(`./Pages/${name}`),
     setup({ el, App, props }) {
         render(<App {...props} />, el)

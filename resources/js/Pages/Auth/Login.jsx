@@ -16,7 +16,7 @@ export default function Login({ app, status }) {
 
     return (
         <Auth>
-            <InertiaHead title={`Login &middot; ${app.name}`} />
+            <InertiaHead title="Login" />
             
             <form onSubmit={handleSubmit} className="row g-3">
                 {Object.keys(status).length > 0 &&

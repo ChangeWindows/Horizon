@@ -25,10 +25,11 @@
                 &::after {
                     position: absolute;
                     background-color: $primary;
-                    left: 0;
+                    left: calc(50% - 8px);
                     bottom: 0;
-                    height: 2px;
-                    width: 100%;
+                    height: 3.5px;
+                    border-radius: 6px;
+                    width: 16px;
                     content: '';
                 }
             }

@@ -3,7 +3,7 @@ import { InertiaLink, usePage } from '@inertiajs/inertia-react'
 
 import NavigationBar from './components/NavigationBar';
 
-import AmaranthIcon, { aiArrowLeft, aiBox, aiChangewindows, aiChangewindowsCan, aiChangewindowsDev, aiChannelsUp, aiDevices, aiLock, aiPlane, aiRocket, aiSoftwareBox, aiTwitter, aiUser, aiUserLock } from '@changewindows/amaranth';
+import { aiArrowLeft, aiBox, aiChannelsUp, aiDevices, aiLock, aiPlane, aiRocket, aiSoftwareBox, aiTwitter, aiUser, aiUserLock } from '@changewindows/amaranth';
 
 export default function AdminNavigation() {
     const { auth, nav_can, app } = usePage().props;
@@ -13,9 +13,7 @@ export default function AdminNavigation() {
             <nav className="navbar navbar-expand-xs navbar-light sticky-top">
                 <div className="container-fluid">
                     <InertiaLink className="navbar-brand" href="/">
-                        <div className="app-icon">
-                            <AmaranthIcon icon={app.preview === 'preview' ? aiChangewindowsDev : (app.preview === 'canary' ? aiChangewindowsCan : aiChangewindows)} />
-                        </div>
+                        <img src={app.preview === 'preview' ? '/images/logo-preview.svg' : (app.preview === 'canary' ? '/images/logo-canary.svg' : '/images/logo.svg')} alt="ChangeWindows" className="app-icon" />
                         <span className="brand-label fw-bold">ChangeWindows</span>
                     </InertiaLink>
                 </div>

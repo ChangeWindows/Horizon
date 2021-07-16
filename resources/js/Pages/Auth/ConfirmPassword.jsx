@@ -16,7 +16,7 @@ export default function ConfirmPassword({ app, status }) {
 
     return (
         <Auth>
-            <InertiaHead title={`Confirm Password &middot; ${app.name}`} />
+            <InertiaHead title="Confirm Password" />
 
             <form onSubmit={handleSubmit} className="row g-3">
                 <div className="col-12">

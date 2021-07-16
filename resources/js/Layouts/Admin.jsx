@@ -49,7 +49,7 @@ export default function App({ children }) {
 
     return (
         <div className="bg-light">
-            <InertiaHead title={`Backstage &middot; ${app.name}`} />
+            <InertiaHead title="Backstage" />
 
             <div className="grid" style={{ height: windowHeight }}>
                 <header className="grid-sidebar">

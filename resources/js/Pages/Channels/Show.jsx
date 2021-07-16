@@ -34,7 +34,7 @@ export default function Show({ app, platform, platforms, channel_order, releases
     
     return (
         <App>
-            <InertiaHead title={`${platform.name} channels &middot; ${app.name}`} />
+            <InertiaHead title={`${platform.name} channels`} />
 
             <PlatformNavigation all="/channels" page="Channels" platforms={platforms} />
         

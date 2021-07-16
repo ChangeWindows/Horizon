@@ -18,7 +18,7 @@ import Markdown from 'markdown-to-jsx';
 export default function Package({ app, release, platform, channels, timeline, pagination }) {
     return (
         <App>
-            <InertiaHead title={`${release.name} &middot; ${app.name}`} />
+            <InertiaHead title={release.name} />
 
             <nav className="navbar navbar-expand-xl navbar-light sticky-top">
                 <div className="container">

@@ -51,7 +51,7 @@ export default function Auth({ children }) {
     return (
         <div className="auth auth-flow" style={{ height: windowHeight }}>
             <div className="content">
-                <a href="javascript:history.back()" className="btn btn-link btn-sm text-white"><AmaranthIcon icon={aiArrowLeft} /> Back</a>
+                <a href="javascript:history.back()" className="btn btn-link btn-sm"><AmaranthIcon icon={aiArrowLeft} /> Back</a>
                 <div className="auth-card">
                     <h1 className="h3 m-0 py-5 d-flex justify-content-center align-items-center">
                         <AmaranthIcon icon={app.preview === 'preview' ? aiChangewindowsDev : (app.preview === 'canary' ? aiChangewindowsCan : aiChangewindows)} className="me-1" />

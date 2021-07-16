@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { InertiaLink, InertiaHead } from '@inertiajs/inertia-react';
+import { InertiaHead } from '@inertiajs/inertia-react';
 
 import App from '../../Layouts/App';
 
-import AmaranthIcon, { aiGear, aiInfoCircle } from '@changewindows/amaranth';
+import AmaranthIcon, { aiChangewindows, aiChangewindowsCan, aiChangewindowsDev, aiGithub, aiPatreon, aiTwitter } from '@changewindows/amaranth';
 
 import { getLocal, setLocal } from '../../utils/localStorage';
 
-export default function Show({ app }) {
+export default function Show({ app, patrons }) {
     const [theme, setTheme] = useState(getLocal('theme'));
     const [showActiveOnly, setShowActiveOnly] = useState(getLocal('showActiveOnly'));
 
@@ -40,24 +40,13 @@ export default function Show({ app }) {
 
     return (
         <App>
-            <InertiaHead title={`Settings &middot; ${app.name}`} />
+            <InertiaHead title="Settings" />
 
             <nav className="navbar navbar-expand navbar-light sticky-top">
                 <div className="container">
-                    <div className="collapse navbar-collapse" id="navbar-page">
-                        <ul className="navbar-nav me-auto">
-                            <li className="nav-item">
-                                <InertiaLink className="nav-link active" href="/settings">
-                                    <AmaranthIcon icon={aiGear} /> Settings
-                                </InertiaLink>
-                            </li>
-                            <li className="nav-item">
-                                <InertiaLink className="nav-link" href="/settings/about">
-                                    <AmaranthIcon icon={aiInfoCircle} /> About
-                                </InertiaLink>
-                            </li>
-                        </ul>
-                    </div>
+                    <span className="navbar-brand text-wrap">
+                        Settings
+                    </span>
                 </div>
             </nav>
             
@@ -116,6 +105,57 @@ export default function Show({ app }) {
                                             <label className="form-check-label" htmlFor="showActiveChannelsOnly">Only show active channels on the Channels-pages.</label>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div className="col-12 col-md-4">
+                        <h4 className="h5 mb-0">Our Patrons</h4>
+                        <p className="text-muted mb-0"><small>Meet the people who make ChangeWindows possible.</small></p>
+                    </div>
+                    <div className="col-12 col-md-8">
+                        <div className="card">
+                            <div className="card-body">
+                                <div className="row g-5 justify-content-center">
+                                    {patrons.map((patron, key) => (
+                                        <div className="col-6 col-sm-4 col-xl-3" key={key}>
+                                            <div className="d-flex flex-column align-items-center">
+                                                <img src={patron.avatar} alt={patron.name} style={{ width: 40, height: 40 }} className="rounded-circle" />
+                                                <div className="mt-2">
+                                                    <p className="fw-bold m-0 text-center">{patron.name}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div className="col-12 col-md-4">
+                        <h4 className="h5 mb-0">About</h4>
+                        <p className="text-muted mb-0"><small>About ChangeWindows.</small></p>
+                    </div>
+                    <div className="col-12 col-md-8">
+                        <div className="card">
+                            <div className="card-body">
+                                <div className="d-flex flex-column">
+                                    <h1 className="h3 mb-5 d-inline-flex">
+                                        <AmaranthIcon icon={app.preview === 'preview' ? aiChangewindowsDev : (app.preview === 'canary' ? aiChangewindowsCan : aiChangewindows)} className="me-1 mt-1" />
+                                        ChangeWindows {app.preview === 'preview' && 'Preview'}{app.preview === 'canary' && 'Canary'}
+                                    </h1>
+
+                                    <p className="lead mb-5 fw-normal" style={{ maxWidth: 600 }}>ChangeWindows is a detailed changelog and release history for Windows across all platforms it appears on. With detailed and timely updates, as well as a clean and clear interface, ChangeWindows' goal is to provide a solid resource for anyone interested in knowing what's next for Windows.</p>
+
+                                    <div className="mb-5">
+                                        <a href="https://twitter.com/changewindows" target="_blank" className="btn btn-primary btn-sm me-1"><AmaranthIcon icon={aiTwitter} /> Twitter</a>
+                                        <a href="https://github.com/changewindows/horizon" target="_blank" className="btn btn-primary btn-sm me-1"><AmaranthIcon icon={aiGithub} /> GitHub</a>
+                                        <a href="https://patreon.com/changewindows" target="_blank" className="btn btn-primary btn-sm me-1"><AmaranthIcon icon={aiPatreon} /> Patreon</a>
+                                    </div>
+
+                                    <a className="m-0 h4 f-384" href="https://studio384.be" target="_blank">Studio <span className="studio-384">384</span></a>
+                                    <p className="m-0">&copy; 2014-2021 &middot; All Right Reserved &middot; <a href="https://github.com/changewindows/horizon/releases" target="_blank">Version {app.version}</a></p>
                                 </div>
                             </div>
                         </div>

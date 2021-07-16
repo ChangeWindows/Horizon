@@ -5,7 +5,7 @@ import clsx from 'clsx';
 
 import AmaranthIcon from '@changewindows/amaranth';
 
-export default function NavigationItem({ title, url, icon, primary, external = false, small = false }) {
+export default function NavigationItem({ title, url, icon, primary, external = false }) {
     const page = usePage();
 
     const Component = useMemo(() => (external ? 'a' : InertiaLink), ['external']);
@@ -15,7 +15,7 @@ export default function NavigationItem({ title, url, icon, primary, external = f
         <Component
             {...mainProps}
             href={`${url}${primary ?? ''}`}
-            className={clsx('sidebar-item', { 'active': page.url.includes(url), 'sidebar-item-sm': small })}
+            className={clsx('sidebar-item', { 'active': page.url.includes(url) })}
         >
             <AmaranthIcon icon={icon} /> <span className="sidebar-label">{title}</span>
         </Component>

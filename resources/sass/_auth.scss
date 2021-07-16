@@ -1,7 +1,5 @@
 .auth {
-    background-image: url('../images/background.png');
-    background-position: center center;
-    background-size: cover;
+    background: var(--auth-bg);
     height: 100vh;
     flex-direction: row;
     display: flex;
@@ -23,11 +21,6 @@
         max-width: 100%;
         border-radius: $border-radius;
 
-        @supports (backdrop-filter: blur(15px) saturate(125%)) {
-            background-color: var(--card-auth-bg-acrylic);
-            backdrop-filter: blur(15px) saturate(125%);
-        }
-
         &.auth-card-lg {
             width: 600px;
             max-width: 100%;
@@ -37,11 +30,11 @@
     }
 
     .btn-link {
-        &.text-white {
-            &:hover,
-            &:focus {
-                background-color: rgba($dark, .2);
-            }
+        color: var(--text);
+
+        &:hover,
+        &:focus {
+            background-color: rgba($dark, .2);
         }
     }
 }

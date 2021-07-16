@@ -20,7 +20,7 @@ export default function Show({ app, platforms, platform, channels, releases, pac
 
     return (
         <App>
-            <InertiaHead title={`${platform.name} &middot; ${app.name}`} />
+            <InertiaHead title={platform.name} />
 
             <PlatformNavigation page="Platforms" platforms={platforms} />
         

@@ -16,7 +16,7 @@ export default function ForgotPassword({ app, status }) {
 
     return (
         <Auth>
-            <InertiaHead title={`Forgot Password &middot; ${app.name}`} />
+            <InertiaHead title="Forgot Password" />
 
             <form onSubmit={handleSubmit} className="row g-3">
                 <div className="col-12">

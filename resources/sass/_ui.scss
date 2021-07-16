@@ -73,7 +73,7 @@
             .sidebar-divider {
                 @media (min-width: 576px) {
                     border-bottom: 1px solid var(--nav-border-color);
-                    margin: 0 0 .25rem 0;
+                    margin: .25rem 0 .5rem 0;
                 }
             }
 
@@ -114,21 +114,6 @@
                     text-align: center;
                 }
 
-                &.sidebar-item-sm {
-                    @media (min-width: 992px) {
-                        width: 40px;
-                        justify-content: center;
-
-                        .sidebar-label {
-                            display: none;
-                        }
-
-                        .ai {
-                            margin-right: 0;
-                        }
-                    }
-                }
-
                 .ai {
                     margin-right: .5rem;
 
@@ -162,13 +147,16 @@
                     }
 
                     @media (min-width: 576px) {
+                        background-color: var(--nav-item-hover);
+
                         &::after {
                             position: absolute;
                             background-color: $primary;
                             left: 0;
-                            top: 25%;
-                            height: 50%;
-                            width: 2px;
+                            top: 30%;
+                            height: 40%;
+                            width: 3.5px;
+                            border-radius: 6px;
                             content: '';
                         }
                     }

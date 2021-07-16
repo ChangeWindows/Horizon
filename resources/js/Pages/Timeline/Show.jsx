@@ -17,7 +17,7 @@ import { format, parseISO } from 'date-fns';
 export default function Show({ app, timeline, pagination, platform, platforms, channel_platforms }) {
     return (
         <App>
-            <InertiaHead title={`${platform.name} timeline &middot; ${app.name}`} />
+            <InertiaHead title={`${platform.name} timeline`} />
 
             <PlatformNavigation all="/timeline" page="Timeline" platforms={platforms} />
         

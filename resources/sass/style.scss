@@ -55,8 +55,8 @@
     --card-add-border: #{ light-dark(darken($light, 10), darken($dark, 7)) };
     --card-add-border-hover: #{ light-dark(darken($light, 13), darken($dark, 9)) };
 
-    --card-auth-bg: #{ light-dark($light, lighten($dark, 1)) };
-    --card-auth-bg-acrylic: #{ light-dark(rgba($light, .8), rgba($dark, .8)) };
+    --auth-bg: #{ light-dark(darken($light, 5), darken($dark, 5)) };
+    --card-auth-bg: #{ light-dark($light, $dark) };
 
     --dropdown-bg: #{ light-dark($light, lighten($dark, 3)) };
     --dropdown-bg-hover: #{ light-dark(darken($light, 3), darken($dark, 1)) };
@@ -257,9 +257,16 @@ body {
         }
 
         .tags {
+            display: flex;
             flex: 1;
+            flex-wrap: wrap;
             margin-right: 0.5rem;
-            padding: 0 0 .1875rem 0;
+            margin-bottom: .25rem;
+            padding: 0;
+
+            & > span {
+              margin: .25rem 0 0 0;
+            }
         }
 
         .version {
@@ -353,14 +360,31 @@ a.card {
 
 // Changelogs
 .changelog-content {
-    h2 {
-        @extend h5;
+    h1 {
+        font-size: 2.5rem;
         font-weight: 600;
+
+        &:not(:first-child) {
+            margin-top: 2rem;
+        }
+    }
+
+    h2 {
+        @extend h4;
+        font-weight: 600;
+
+        &:not(:first-child) {
+            margin-top: 2rem;
+        }
     }
 
     h3 {
-        @extend h6;
+        @extend h5;
         font-weight: 600;
+
+        &:not(:first-child) {
+            margin-top: 1rem;
+        }
     }
 }
 

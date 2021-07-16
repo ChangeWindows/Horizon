@@ -19,7 +19,7 @@ export default function VerifyEmail({ app, session, status }) {
 
     return (
         <Auth>
-            <InertiaHead title={`Verify Email &middot; ${app.name}`} />
+            <InertiaHead title="Verify Email" />
 
             <form onSubmit={handleSubmit} className="row g-3">
                 <div className="col-12">

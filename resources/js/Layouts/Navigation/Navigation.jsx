@@ -30,10 +30,7 @@ export default function Navigation() {
                     { type: 'external', url: 'https://medium.com/changewindows', icon: aiBlog, title: 'Blog' },
                     { type: 'link', url: '/admin/flights', icon: aiAdmin, title: 'Backstage', permission: nav_can.access_dashboard },
                     { type: 'divider' },
-                    { type: 'socials' },
-                ]}
-                socials={[
-                    { type: 'external', url: 'https://twitter.com/changewindows', icon: aiTwitter, title: 'Twitter' },
+                    { type: 'external', url: 'https://twitter.com/changewindows', icon: aiTwitter, title: '@ChangeWindows' },
                     { type: 'external', url: 'https://patreon.com/changewindows', icon: aiPatreon, title: 'Sponsor us' }
                 ]}
             />
